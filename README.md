@@ -4,10 +4,10 @@ Hi this project was made with a smiple HTML, CSS and JS.
 its simple, I made the front-end and the back-end .
 Dont't forget to collectstatic and creatsuperuser to see some details 
 ___
-```Bash
- python3 manage.py collectstatic
- python3 manage.py createsuperuser
- python3 manage.py runserver
+```bash
+$ python3 manage.py collectstatic
+$ python3 manage.py createsuperuser
+$ python3 manage.py runserver
 ```
 ___
 Here is some photos of the website,<u> ENJOY!</u>
