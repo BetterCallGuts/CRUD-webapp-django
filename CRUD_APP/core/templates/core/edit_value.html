@@ -1,0 +1,186 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+
+
+{% block title %}Edit_{{thing}}{% endblock title %}
+{% block link %}<link rel="stylesheet" href="{% static 'css/edit_value.css' %}">{% endblock link %}
+
+{% block content %}
+  <section class="main">
+  
+
+
+
+
+
+
+
+
+
+    {% if op == 'table' %}
+  <h1 style='color:white;'>{{table.name}}</h1>
+  <form action="" method='post'>
+    {% csrf_token %}  
+      <label for="">First column</label>
+      
+      <textarea name="first" id="" cols="30" rows="10">{{table.coulumn_header_1}}</textarea>
+
+      
+      <label for="">Second column</label>
+      <textarea name="second" id="" cols="30" rows="10">{{table.coulumn_header_2}}</textarea>
+
+
+      <label for="">Third column</label>
+      <textarea name="third" id="" cols="30" rows="10">{{table.coulumn_header_3}}</textarea>
+
+
+      <label for="">Fourth column</label>
+      <textarea name="fourth" id="" cols="30" rows="10">{{table.coulumn_header_4}}</textarea>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      {% elif op == 'data' %}
+      <h1 style='color:white;'>{{table.name}} - {{the_data.coulumn1}} - {{the_data.coulumn2}}</h1>
+  <form action="" method='post'>
+
+    {% csrf_token %}
+      <label for=""> {{table.coulumn_header_1}} </label>
+      
+      <textarea name="first" id="" cols="30" rows="10">{{the_data.coulumn1}}</textarea>
+
+      
+      <label for=""> {{table.coulumn_header_2}} </label>
+      <textarea name="second" id="" cols="30" rows="10">{{ the_data.coulumn2}}</textarea>
+
+
+      <label for=""> {{table.coulumn_header_3}} </label>
+      <textarea name="third" id="" cols="30" rows="10">{{the_data.coulumn3}}</textarea>
+
+
+      <label for="">  {{table.coulumn_header_4}}  </label>
+      <textarea name="fourth" id="" cols="30" rows="10">{{the_data.coulumn4}}</textarea>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {% elif op == 'add_value' %}
+      <h1 style='color:white;'>{{table.name}} </h1>
+  <form action="" method='post'>
+
+    {% csrf_token %}
+      <label for=""> {{table.coulumn_header_1}} </label>
+      
+      <textarea name="first" id="" cols="30" rows="10"></textarea>
+
+      
+      <label for=""> {{table.coulumn_header_2}} </label>
+      <textarea name="second" id="" cols="30" rows="10"></textarea>
+
+
+      <label for=""> {{table.coulumn_header_3}} </label>
+      <textarea name="third" id="" cols="30" rows="10"></textarea>
+
+
+      <label for="">  {{table.coulumn_header_4}}  </label>
+      <textarea name="fourth" id="" cols="30" rows="10"></textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {% elif op == 'add_table' %}
+      <h1 style='color:white;'>Add Table </h1>
+  <form action="" method='post'>
+
+    {% csrf_token %}
+      <label for=""> table name </label>
+      
+      <textarea name="name" id="" cols="30" rows="10"></textarea>
+
+
+      <label for=""> colmun 1 </label>
+      
+      <textarea name="first" id="" cols="30" rows="10"></textarea>
+
+      
+      <label for=""> colmun 2</label>
+      <textarea name="second" id="" cols="30" rows="10"></textarea>
+
+
+      <label for=""> colmun 3 </label>
+      <textarea name="third" id="" cols="30" rows="10"></textarea>
+
+
+      <label for="">  colmun 4 </label>
+      <textarea name="fourth" id="" cols="30" rows="10"></textarea>
+
+      {% endif %}
+    <input type="submit" value="click">
+
+  
+  
+  </form>
+  
+  
+  
+  
+  
+    <div class="icon">
+      {% if op == 'table' %}
+      
+      <a href="{% url 'core:delete' 'table' table.pk %}"><i class="fa-regular fa-trash-can del"></i> </a>
+
+      {% elif op == 'data'%}
+      <a href="{% url 'core:delete' 'data' the_data.pk %}"><i class="fa-regular fa-trash-can del"></i> </a>
+      {% endif %}
+    <div class="night">
+      <i class="fa-regular fa-moon"></i>
+    </div>
+    <div class="morning"> 
+      <i class="fa-regular fa-sun"></i>
+    </div>
+    
+    <div class="back"> 
+      <a href='{% url "core:show_CRUD" %}'><i class="fa-solid fa-backward"></i></a>
+        </div></div>
+    
+  </section>
+
+  
+
+
+
+  <script src="{% static 'js/edit_value.js' %}"></script>
+
+  {% endblock content %}

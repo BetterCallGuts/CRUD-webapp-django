@@ -1,0 +1,275 @@
+
+.container{
+  height: 100vh;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.nav{
+  display:flex ;
+  flex-direction: column;
+  gap: 10px;
+}
+section nav{
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 200px;
+  align-items: center;
+  flex-direction: column;
+  background-color: gray;
+  height: 500px;
+  gap: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+
+}
+.screwdriver{
+  font-size: 30px;
+  padding: 10px;
+  background-color: rgb(15, 43, 97);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 10px black;
+  transition: .4s;
+}
+.screwdriver:hover{
+  transform: scale(1.1);
+
+}
+.add2:hover{
+  transform: scale(1.1);
+}
+.nav .add-custom{
+  display: flex;
+  gap: 5px;
+  justify-content: space-around;
+
+}
+.add2{
+  background-color: rgb(11, 62, 11);
+  color: white;
+  transition: .4s;
+
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px black;
+}
+section nav h2{
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: rgb(3, 89, 73);
+  border-radius: 10px;
+  text-shadow: 0 0 10px black;
+  transition: .4s ease;
+  box-shadow: 10px 0px 10px rgb(50, 49, 49);
+
+
+}
+section nav h2:hover{
+  background: rgba(3, 89, 73, 0.649);
+  transform: scale(1.1);
+
+}
+
+.container .main{
+  height: 580px;
+  width: 1000px;
+  scroll-behavior: smooth;
+  transition: .4s;
+  background: gray;
+  box-shadow: 10px 10px 20px black;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  
+  /* flex-direction: column; */
+}
+.main .header{
+  display: grid;
+  height: 20%;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  overflow-y: hidden; 
+  overflow-x: scroll;
+  background: rgb(25, 78, 19);
+  color: white;
+
+}
+.main .header .header-row{
+  display: flex;
+  /* grid-column: span 2; */
+  justify-content: center;
+  align-items: center;
+  min-width: 205px;
+  max-width: 205px;
+  font-size: 1.4rem;
+  background-color: rgb(107, 102, 25);
+  color: black;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+  height: 100%;
+
+}
+.main .body{
+  max-width: fit-content;
+  padding: 20px;
+  align-items: center;
+  scroll-behavior: smooth;
+  background: rgb(82, 33, 33);
+  box-shadow: 0px 10px 10px black;
+  color: white;
+  display: grid;
+  overflow-y:scroll;
+  overflow-x:scroll;
+  grid-template-columns: repeat(16,1fr);
+  gap: 10px;
+}
+
+.main .body .body-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px black;
+  background: rgb(11, 9, 44);
+  /* width: 10 0px; */
+  min-width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  fill: none;
+  grid-column: span 2;
+  height: 50px;
+  transition: .4s ease;
+
+
+
+  
+}
+.selected{
+  background-color: rgb(46, 2, 87);
+  border-radius: 10px;
+}
+.selected:hover{
+  background-color: rgba(46, 2, 87, 0.545);
+
+}
+
+.main .body .body-row.id{
+  grid-column: span 1;
+  min-width: 190px;
+  max-width: 190px;
+}
+.main .body .body-row.icon{
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.del{
+  background: rgba(255, 0, 0, 0.641);
+  border-radius: 3px;
+  transition: .4s;
+  padding: 5px;
+  box-shadow: 0px 0px 3px black;
+
+}
+
+.edit{
+  background-color: rgb(89, 89, 13);
+  box-shadow: 0px 0px 3px black;
+  border-radius: 8px;
+  padding: 5px;
+  transition: .4s;
+  
+}
+.edit:hover{
+  transform: scale(1.1);
+
+}
+.del:hover{
+  transform: scale(1.1);
+
+}
+
+.container .icons{
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  gap: 40px;
+
+
+}
+
+.container .icons .night{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease;
+  padding: 10px ;
+  background-color: rgb(9, 40, 83);
+  text-shadow: 0 0 10px black;
+  width: 60px;
+  border-radius: 10px;
+  color: rgb(66, 124, 174);
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+}
+
+
+.container .icons .morning{
+  font-size: 35px;
+  background-color: rgb(170, 182, 200);
+  text-shadow: 0 0 10px black;
+  padding: 10px ;
+  border-radius: 10px;
+  color: rgb(167, 174, 66);
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transition: .4s ease;
+}
+
+.container .icons .morning:hover{
+  transform: scale(1.1);
+
+}
+
+.container .icons .night:hover{
+  transform: scale(1.1);
+
+}
+
+.arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: rgb(39, 44, 69);
+  text-shadow: 0 0 10px black;
+  padding: 10px ;
+  border-radius: 10px;
+  color: rgb(167, 174, 66);
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transition: .4s ease;
+}
+.container .icons .arrow:hover{
+  transform: scale(1.1);
+
+}
+
+.for-nothing{
+  grid-column: span 1;
+  /* width: 40px; */
+  padding: 0 100px;
+}
+
+.body .for-nothing{
+  padding: 0 90px;
+}

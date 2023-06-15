@@ -1,0 +1,123 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block title %}Show_Values{% endblock title %}
+{% block link %}<link rel="stylesheet" href="{% static 'css/show_values.css' %}">
+{% endblock link %}
+
+
+{% block content %}
+  <style>
+    .main .header{
+      grid-template-columns: repeat(20, 1fr);
+    }
+    .main .body{
+      grid-template-columns: repeat(16,1fr);
+
+    }
+  </style>
+
+
+  <section class="container">
+
+
+    <div class="nav">
+    <nav>
+
+      {% for one_table in tables %}
+
+      <a href="{% url 'core:show_CRUD' one_table.pk %}"  >
+        <h2 {% if one_table.pk == table.pk %} class='selected' {% endif %} >{{one_table.name}}</h2>
+      </a>
+
+      {% endfor %}
+
+
+    
+    
+    </nav>
+    <div class="add-custom">
+      <a href="{% url 'core:add_table' %}">
+      <i class="fa-solid fa-plus add2"></i></a>
+      <a {% if  table.pk != None %} href="{% url 'core:edit' 'table' table.pk  %}" {% else %}href="{% url 'core:show_CRUD'  %}{% endif %}">
+      <i class="fa-solid fa-screwdriver-wrench screwdriver"></i>
+      </a>
+        </div>
+  </div>
+    <section class="main">
+    <div class="header">
+      <div class="header-row">ID</div>
+      <div class="for-nothing"></div> 
+      <div class="header-row">{{table.coulumn_header_1}}</div>
+      <div class="for-nothing"></div>
+      <div class="header-row">{{table.coulumn_header_2}}</div>
+      <div class="for-nothing"></div>
+      <div class="header-row">{{table.coulumn_header_3}} </div>
+      <div class="for-nothing"></div>
+      <div class="header-row"> {{ table.coulumn_header_4}} </div>
+    
+    </div>
+<!--  fr = (x*2) -2  + x*2 + 2 -->
+    <div class="body">
+
+     
+      {% for item in data %}
+      <div class="body-row id"> {{ forloop.counter }} </div>
+      <div class="body-row id icon">
+        <a href="{% url 'core:delete' "data" item.pk %}"><i class="fa-regular fa-trash-can del"></i> </a>
+        <a href="{% url 'core:edit' 'data' item.pk %}"> <i class="fa-regular fa-pen-to-square edit"></i></a>
+      </div>
+      <div class="body-row">{{item.coulumn1}}</div>
+      <div class="for-nothing"></div>
+      <div class="for-nothing"></div>
+      <div class="body-row">{{item.coulumn2}}</div>
+      <div class="for-nothing"></div>
+      <div class="for-nothing"></div>
+      <div class="body-row">{{item.coulumn3}}</div>
+      <div class="for-nothing"></div>
+      <div class="for-nothing"></div>
+      <div class="body-row">{{item.coulumn4}}</div>
+      {% endfor %}
+
+      
+  </div>
+
+
+
+  </section>
+
+  <div class="icons">
+    <div class="right arrow">
+      <i class="fa-solid fa-arrow-right"></i>
+      
+    </div>
+    <div class="up arrow">
+      <i class="fa-solid fa-angle-up"></i>
+    </div>
+    <a {% if table.pk == None %}href='{% url "core:add_value"  %}'{% else %}href='{% url "core:add_value" table.pk %}'{% endif %}  style='position:absolute;bottom:20px;right:100px'> 
+
+      <i class="fa-solid fa-plus add2"></i></a>
+    
+    <div class="night">
+      <i class="fa-regular fa-moon"></i>
+    </div>
+    <div class="morning"> 
+      <i class="fa-regular fa-sun"></i>
+      
+    </div>  
+    
+    <div class="down arrow"> 
+      <i class="fa-solid fa-angle-down"></i>
+        </div>  
+
+        <div class="left arrow">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        
+  </div>
+ 
+  
+</section>
+
+<script src="{% static 'js/show_values.js' %}"></script>
+{% endblock content %}  

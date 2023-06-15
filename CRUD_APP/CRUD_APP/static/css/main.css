@@ -1,0 +1,56 @@
+*, *::after,*::before
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+.morning:hover{
+  transform: scale(1.1);
+
+}
+
+.night:hover{
+  transform: scale(1.1);
+
+}
+
+
+body{
+  background-color: rgb(19, 19, 33);
+  
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+.night{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease;
+  padding: 10px ;
+  background-color: rgb(9, 40, 83);
+  text-shadow: 0 0 10px black;
+  width: 60px;
+  border-radius: 10px;
+  color: rgb(66, 124, 174);
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+}
+
+
+.morning{
+  font-size: 35px;
+  background-color: rgb(170, 182, 200);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  padding: 10px ;
+  border-radius: 10px;
+  width: 60px;
+  color: rgb(238, 255, 0);
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transition: .4s ease;
+}
