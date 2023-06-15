@@ -10,6 +10,8 @@ $ python3 manage.py createsuperuser
 $ python3 manage.py runserver
 ```
 ___
+# BTW Moving with arrows are supported !
+___
 Here is some photos of the website,<u> ENJOY!</u>
 
 ![Screenshot from 2023-06-14 19-44-45](https://github.com/BetterCallGuts/CRUD-webapp-django/assets/122576822/79144b75-743a-4bdf-a78e-0bc11db5b5fe)
